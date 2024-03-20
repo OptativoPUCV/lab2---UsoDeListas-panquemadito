@@ -2,3 +2,14 @@ Wed 20 Mar 2024 05:41:55 PM UTC:
  tests:  0|5
 total_score: 0/70
 66a27de
+Wed 20 Mar 2024 05:44:11 PM UTC: 
+ exercises.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:48:13: error: unused variable ‘dato’ [-Werror=unused-variable]
+   48 |        int* dato = (int*)malloc(sizeof(int));
+      |             ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+421327b

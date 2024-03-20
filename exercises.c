@@ -64,9 +64,16 @@ Crea una función que reciba una lista de enteros (int*) y
 retorne la suma de sus elementos.
 */
 int sumaLista(List *L) {
-   return 0;
-}
+    int suma = 0; 
+    int* elemento = (int*)first(L);
 
+    while (elemento != NULL) { 
+        suma += *elemento; 
+        elemento = (int*)next(L); 
+    }
+
+    return suma; 
+}
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
@@ -76,8 +83,20 @@ Asume que popCurrent luego de eliminar un elemento se
 posiciona en el elemento anterior.
 */
 
-void eliminaElementos(List*L, int elem){
+void eliminaElementos(List *L, int elem) {
+    if (L == NULL) return; 
 
+    void* current = first(L);
+    while (current != NULL) { 
+        int* currentElem = (int*) current;
+        if (*currentElem == elem) { 
+            free(current); 
+            popCurrent(L);
+            current = next(L); 
+        } else {
+            current = next(L); 
+        }
+    }
 }
 
 /*

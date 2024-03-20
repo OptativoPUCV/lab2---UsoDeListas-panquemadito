@@ -40,21 +40,23 @@ Recuerda que la lista almacena punteros, por lo que
 debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
-
 List* crea_lista() {
-List* L = create_list();
-if (L == NULL) {
-    exit(EXIT_FAILURE);
-}
-
-for (int i = 1; i <= 10; i++) {
-    int* nuevoElemento = (int*)malloc(sizeof(int)); 
-    if (nuevoElemento == NULL) {
+    List* L = create_list();
+    if (L == NULL) {
         exit(EXIT_FAILURE);
     }
-    *nuevoElemento = i; 
-    pushBack(L, nuevoElemento); 
 
+    for (int i = 1; i <= 10; i++) {
+        int* nuevoElemento = (int*)malloc(sizeof(int)); 
+        if (nuevoElemento == NULL) {
+            exit(EXIT_FAILURE);
+        }
+        *nuevoElemento = i; 
+        pushBack(L, nuevoElemento); 
+    }
+
+    return L; // Retornamos el puntero a la lista
+}
 
 /*
 Ejercicio 2.

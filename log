@@ -24,3 +24,219 @@ exercises.c:48:13: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 a7ace2a
+Wed 20 Mar 2024 06:09:11 PM UTC: 
+ exercises.c | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+In file included from test.c:6:
+arraylist.c: In function ‘create_list’:
+arraylist.c:15:34: error: invalid application of ‘sizeof’ to incomplete type ‘List’
+   15 |   List* L = (List*)malloc(sizeof(List));
+      |                                  ^~~~
+arraylist.c:16:4: error: invalid use of incomplete typedef ‘List’
+   16 |   L->current = 0;
+      |    ^~
+arraylist.c:17:4: error: invalid use of incomplete typedef ‘List’
+   17 |   L->size = 0;
+      |    ^~
+arraylist.c: In function ‘first’:
+arraylist.c:22:7: error: invalid use of incomplete typedef ‘List’
+   22 |   if(L->size == 0) {
+      |       ^~
+arraylist.c:25:4: error: invalid use of incomplete typedef ‘List’
+   25 |   L->current = 0;
+      |    ^~
+arraylist.c:26:11: error: invalid use of incomplete typedef ‘List’
+   26 |   return L->data[L->current];
+      |           ^~
+arraylist.c:26:19: error: invalid use of incomplete typedef ‘List’
+   26 |   return L->data[L->current];
+      |                   ^~
+arraylist.c: In function ‘next’:
+arraylist.c:30:7: error: invalid use of incomplete typedef ‘List’
+   30 |   if(L->current < L->size - 1) {
+      |       ^~
+arraylist.c:30:20: error: invalid use of incomplete typedef ‘List’
+   30 |   if(L->current < L->size - 1) {
+      |                    ^~
+arraylist.c:31:6: error: invalid use of incomplete typedef ‘List’
+   31 |     L->current++;
+      |      ^~
+arraylist.c:32:13: error: invalid use of incomplete typedef ‘List’
+   32 |     return L->data[L->current];
+      |             ^~
+arraylist.c:32:21: error: invalid use of incomplete typedef ‘List’
+   32 |     return L->data[L->current];
+      |                     ^~
+arraylist.c: In function ‘pushFront’:
+arraylist.c:38:7: error: invalid use of incomplete typedef ‘List’
+   38 |   if(L->size == 0) {
+      |       ^~
+arraylist.c:39:6: error: invalid use of incomplete typedef ‘List’
+   39 |     L->data[0] = dato;
+      |      ^~
+arraylist.c:40:6: error: invalid use of incomplete typedef ‘List’
+   40 |     L->size++;
+      |      ^~
+arraylist.c:43:16: error: invalid use of incomplete typedef ‘List’
+   43 |   for(int i = L->size; i > 0; i--) {
+      |                ^~
+arraylist.c:44:6: error: invalid use of incomplete typedef ‘List’
+   44 |     L->data[i] = L->data[i - 1];
+      |      ^~
+arraylist.c:44:19: error: invalid use of incomplete typedef ‘List’
+   44 |     L->data[i] = L->data[i - 1];
+      |                   ^~
+arraylist.c:46:4: error: invalid use of incomplete typedef ‘List’
+   46 |   L->data[0] = dato;
+      |    ^~
+arraylist.c:47:4: error: invalid use of incomplete typedef ‘List’
+   47 |   L->size++;
+      |    ^~
+arraylist.c: In function ‘pushBack’:
+arraylist.c:51:4: error: invalid use of incomplete typedef ‘List’
+   51 |   L->data[L->size] = dato;
+      |    ^~
+arraylist.c:51:12: error: invalid use of incomplete typedef ‘List’
+   51 |   L->data[L->size] = dato;
+      |            ^~
+arraylist.c:52:4: error: invalid use of incomplete typedef ‘List’
+   52 |   L->size++;
+      |    ^~
+arraylist.c: In function ‘pushCurrent’:
+arraylist.c:56:7: error: invalid use of incomplete typedef ‘List’
+   56 |   if(L->size == 0) {
+      |       ^~
+arraylist.c:57:6: error: invalid use of incomplete typedef ‘List’
+   57 |     L->data[0] = dato;
+      |      ^~
+arraylist.c:58:6: error: invalid use of incomplete typedef ‘List’
+   58 |     L->size++;
+      |      ^~
+arraylist.c:61:16: error: invalid use of incomplete typedef ‘List’
+   61 |   for(int i = L->size; i > L->current; i--) {
+      |                ^~
+arraylist.c:61:29: error: invalid use of incomplete typedef ‘List’
+   61 |   for(int i = L->size; i > L->current; i--) {
+      |                             ^~
+arraylist.c:62:6: error: invalid use of incomplete typedef ‘List’
+   62 |     L->data[i] = L->data[i - 1];
+      |      ^~
+arraylist.c:62:19: error: invalid use of incomplete typedef ‘List’
+   62 |     L->data[i] = L->data[i - 1];
+      |                   ^~
+arraylist.c:64:4: error: invalid use of incomplete typedef ‘List’
+   64 |   L->data[L->current + 1] = dato;
+      |    ^~
+arraylist.c:64:12: error: invalid use of incomplete typedef ‘List’
+   64 |   L->data[L->current + 1] = dato;
+      |            ^~
+arraylist.c:65:4: error: invalid use of incomplete typedef ‘List’
+   65 |   L->size++;
+      |    ^~
+arraylist.c: In function ‘popFront’:
+arraylist.c:69:7: error: invalid use of incomplete typedef ‘List’
+   69 |   if(L->size == 0) {
+      |       ^~
+arraylist.c:72:17: error: invalid use of incomplete typedef ‘List’
+   72 |   void* dato = L->data[0];
+      |                 ^~
+arraylist.c:73:23: error: invalid use of incomplete typedef ‘List’
+   73 |   for(int i = 0; i < L->size - 1; i++) {
+      |                       ^~
+arraylist.c:74:6: error: invalid use of incomplete typedef ‘List’
+   74 |     L->data[i] = L->data[i + 1];
+      |      ^~
+arraylist.c:74:19: error: invalid use of incomplete typedef ‘List’
+   74 |     L->data[i] = L->data[i + 1];
+      |                   ^~
+arraylist.c:76:4: error: invalid use of incomplete typedef ‘List’
+   76 |   L->size--;
+      |    ^~
+arraylist.c: In function ‘popBack’:
+arraylist.c:81:7: error: invalid use of incomplete typedef ‘List’
+   81 |   if(L->size == 0) {
+      |       ^~
+arraylist.c:84:17: error: invalid use of incomplete typedef ‘List’
+   84 |   void* dato = L->data[L->size - 1];
+      |                 ^~
+arraylist.c:84:25: error: invalid use of incomplete typedef ‘List’
+   84 |   void* dato = L->data[L->size - 1];
+      |                         ^~
+arraylist.c:85:4: error: invalid use of incomplete typedef ‘List’
+   85 |   L->size--;
+      |    ^~
+arraylist.c: In function ‘popCurrent’:
+arraylist.c:90:7: error: invalid use of incomplete typedef ‘List’
+   90 |   if(L->size == 0) {
+      |       ^~
+arraylist.c:93:17: error: invalid use of incomplete typedef ‘List’
+   93 |   void* dato = L->data[L->current];
+      |                 ^~
+arraylist.c:93:25: error: invalid use of incomplete typedef ‘List’
+   93 |   void* dato = L->data[L->current];
+      |                         ^~
+arraylist.c:94:16: error: invalid use of incomplete typedef ‘List’
+   94 |   for(int i = L->current; i < L->size - 1; i++) {
+      |                ^~
+arraylist.c:94:32: error: invalid use of incomplete typedef ‘List’
+   94 |   for(int i = L->current; i < L->size - 1; i++) {
+      |                                ^~
+arraylist.c:95:6: error: invalid use of incomplete typedef ‘List’
+   95 |     L->data[i] = L->data[i + 1];
+      |      ^~
+arraylist.c:95:19: error: invalid use of incomplete typedef ‘List’
+   95 |     L->data[i] = L->data[i + 1];
+      |                   ^~
+arraylist.c:97:4: error: invalid use of incomplete typedef ‘List’
+   97 |   L->size--;
+      |    ^~
+arraylist.c:98:4: error: invalid use of incomplete typedef ‘List’
+   98 |   L->current--;
+      |    ^~
+arraylist.c: In function ‘get_size’:
+arraylist.c:103:11: error: invalid use of incomplete typedef ‘List’
+  103 |   return L->size;
+      |           ^~
+test.c: In function ‘crea_lista’:
+test.c:253:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  253 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:271:1: error: expected declaration or statement at end of input
+  271 | }
+      | ^
+test.c:271:1: error: expected declaration or statement at end of input
+test.c:272: error: control reaches end of non-void function [-Werror=return-type]
+In file included from test.c:6:
+arraylist.c: In function ‘first’:
+arraylist.c:27:1: error: control reaches end of non-void function [-Werror=return-type]
+   27 | }
+      | ^
+At top level:
+test.c:253:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  253 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:37:6: error: ‘info_msg’ defined but not used [-Werror=unused-function]
+   37 | void info_msg(char* msg){
+      |      ^~~~~~~~
+In file included from test.c:6:
+arraylist.c:102:5: error: ‘get_size’ defined but not used [-Werror=unused-function]
+  102 | int get_size(List *L) {
+      |     ^~~~~~~~
+arraylist.c:89:7: error: ‘popCurrent’ defined but not used [-Werror=unused-function]
+   89 | void* popCurrent(List *L) {
+      |       ^~~~~~~~~~
+arraylist.c:80:7: error: ‘popBack’ defined but not used [-Werror=unused-function]
+   80 | void* popBack(List *L) {
+      |       ^~~~~~~
+arraylist.c:68:7: error: ‘popFront’ defined but not used [-Werror=unused-function]
+   68 | void* popFront(List *L) {
+      |       ^~~~~~~~
+arraylist.c:55:6: error: ‘pushCurrent’ defined but not used [-Werror=unused-function]
+   55 | void pushCurrent(List *L, void *dato) {
+      |      ^~~~~~~~~~~
+arraylist.c:37:6: error: ‘pushFront’ defined but not used [-Werror=unused-function]
+   37 | void pushFront(List *L, void *dato) {
+      |      ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b614371

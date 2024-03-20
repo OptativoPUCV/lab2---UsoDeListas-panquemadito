@@ -13,3 +13,14 @@ exercises.c:48:13: error: unused variable ‘dato’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 421327b
+Wed 20 Mar 2024 05:44:23 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:48:13: error: unused variable ‘i’ [-Werror=unused-variable]
+   48 |        int* i = (int*)malloc(sizeof(int));
+      |             ^
+cc1: all warnings being treated as errors
+Compilation failed
+a7ace2a

@@ -166,7 +166,7 @@ int parentesisBalanceados(char *cadena) {
         actual++;
     }
 
-    int esBalanceado = is_empty(pila); 
+    int esBalanceado = (top(pila) == 0); 
     while (!is_empty(pila)) {
         free(pop(pila));
     }

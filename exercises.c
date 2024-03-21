@@ -154,7 +154,7 @@ int parentesisBalanceados(char *cadena) {
         } else if (*actual == ')' || *actual == ']' || *actual == '}') {
             if (is_empty(pila) || !corresponde(*(char*)top(pila), *actual)) {
 
-                while (!is_empty(pila)) {
+                while (top(pila) != 0) {
                     free(pop(pila));
                 }
                 free(pila);

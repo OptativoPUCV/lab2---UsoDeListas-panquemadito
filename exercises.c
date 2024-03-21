@@ -153,12 +153,12 @@ int parentesisBalanceados(char *cadena) {
             push(pila, dato);
         } else if (*actual == ')' || *actual == ']' || *actual == '}') {
   
-            if (is_empty(pila) || !corresponde(*(char*)top(pila), *actual)) {
+            if (top(pila) !=0 || !corresponde(*(char*)top(pila), *actual)) {
       
-                while (!is_empty(pila)) {
+                while (top(pila) !=0) {
                     free(pop(pila));
                 }
-                free_stack(pila);
+                free(pila);
                 return 0;
             } else {
 ==
@@ -168,11 +168,11 @@ int parentesisBalanceados(char *cadena) {
         actual++;
     }
 
-    int esBalanceado = is_empty(pila);
-    while (!is_empty(pila)) {
+    int esBalanceado = (top(pila) == 0);
+    while (top(pila) !=0) {
         free(pop(pila));
     }
-    free_stack(pila);
+    free(pila);
     return esBalanceado;
 }
 

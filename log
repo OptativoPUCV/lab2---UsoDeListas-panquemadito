@@ -554,3 +554,13 @@ exercises.c:164:1: error: expected expression before ‘==’ token
 cc1: all warnings being treated as errors
 Compilation failed
 e4cd43d
+Thu 21 Mar 2024 12:50:59 AM UTC: 
+ exercises.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:164:1: error: expected expression before ‘==’ token
+  164 | ==
+      | ^~
+Compilation failed
+2ab4c3d

@@ -585,3 +585,14 @@ exercises.c:160:17: error: implicit declaration of function ‘free_stack’; di
 cc1: all warnings being treated as errors
 Compilation failed
 f9e4b75
+Thu 21 Mar 2024 12:53:12 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:155:17: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  155 |             if (is_empty(pila) || !corresponde(*(char*)top(pila), *actual)) {
+      |                 ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+faca4df

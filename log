@@ -417,3 +417,26 @@ exercises.c:150:11: error: implicit declaration of function ‘freeStack’; did
 cc1: all warnings being treated as errors
 Compilation failed
 dcc5066
+Thu 21 Mar 2024 12:40:15 AM UTC: 
+ exercises.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:140:19: error: implicit declaration of function ‘createStack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  140 |     Stack *pila = createStack();
+      |                   ^~~~~~~~~~~
+      |                   create_stack
+exercises.c:140:19: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+exercises.c:145:24: error: expected expression before ‘/’ token
+  145 |             *dato = 1; /
+      |                        ^
+exercises.c:148:17: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  148 |             if (isEmpty(pila)) {
+      |                 ^~~~~~~
+exercises.c:149:17: error: implicit declaration of function ‘freeStack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  149 |                 freeStack(pila);
+      |                 ^~~~~~~~~
+      |                 create_stack
+cc1: all warnings being treated as errors
+Compilation failed
+5b0e053

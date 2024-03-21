@@ -137,27 +137,30 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 int parentesisBalanceados(char *cadena) {
-  Stack *pila = createStack();
-  char *actual = cadena;
-  while(*actual) {
-    if (*actual == '(') {
-      int *dato = (int*)malloc(sizeof(int)) ;
-      *dato = *actual;
-      push(pila, actual);
-      } else if (*actual == ')') {
-
-      if (isEmpty(pila)) { 
-          freeStack(pila); 
-          return 0;
-      } else {
- 
-          int *dato = (int*)pop(pila);
-          free(dato); 
+    Stack *pila = createStack();
+    char *actual = cadena;
+    while (*actual) {
+        if (*actual == '(') {
+            int *dato = (int*)malloc(sizeof(int));
+            *dato = 1; /
+            push(pila, dato);
+        } else if (*actual == ')') {
+            if (isEmpty(pila)) { 
+                freeStack(pila); 
+                return 0;
+            } else {
+                int *dato = (int*)pop(pila);
+                free(dato);
+            }
         }
-      }
-      actual++;
+        actual++;
     }
-  int esBalanceado = isEmpty(pila);
-      freeStack(pila); 
-      return esBalanceado;
-  }
+
+    int esBalanceado = isEmpty(pila);
+    while (!isEmpty(pila)) {
+        int *dato = (int*)pop(pila);
+        free(dato);
+    }
+    freeStack(pila); 
+    return esBalanceado;
+}

@@ -136,8 +136,28 @@ La función verifica si la cadena de entrada tiene sus
 paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
-
 int parentesisBalanceados(char *cadena) {
-   return 0;
-}
+  Stack *pila = createStack();
+  char *actual = cadena;
+  while(*actual) {
+    if (*actual == '(') {
+      int *dato = (int*)malloc(sizeof(int)) ;
+      *dato = *actual;
+      push(pila, actual);
+      } else if (*actual == ')') {
 
+      if (isEmpty(pila)) { 
+          freeStack(pila); 
+          return 0;
+      } else {
+ 
+          int *dato = (int*)pop(pila);
+          free(dato); 
+        }
+      }
+      actual++;
+    }
+  int esBalanceado = isEmpty(pila);
+      freeStack(pila); 
+      return esBalanceado;
+  }

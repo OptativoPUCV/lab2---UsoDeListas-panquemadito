@@ -397,3 +397,23 @@ Thu 21 Mar 2024 12:28:53 AM UTC:
  tests:  4|1
 total_score: 50/70
 195e21e
+Thu 21 Mar 2024 12:37:45 AM UTC: 
+ exercises.c | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:140:17: error: implicit declaration of function ‘createStack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  140 |   Stack *pila = createStack();
+      |                 ^~~~~~~~~~~
+      |                 create_stack
+exercises.c:140:17: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+exercises.c:149:11: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  149 |       if (isEmpty(pila)) {
+      |           ^~~~~~~
+exercises.c:150:11: error: implicit declaration of function ‘freeStack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  150 |           freeStack(pila);
+      |           ^~~~~~~~~
+      |           create_stack
+cc1: all warnings being treated as errors
+Compilation failed
+dcc5066

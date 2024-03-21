@@ -536,3 +536,21 @@ Thu 21 Mar 2024 12:48:00 AM UTC:
  tests:  7|1
 total_score: 60/70
 cf57299
+Thu 21 Mar 2024 12:50:01 AM UTC: 
+ exercises.c | 38 +++++++++++++++++++++++++-------------
+ 1 file changed, 25 insertions(+), 13 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:156:17: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  156 |             if (is_empty(pila) || !corresponde(*(char*)top(pila), *actual)) {
+      |                 ^~~~~~~~
+exercises.c:161:17: error: implicit declaration of function ‘free_stack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  161 |                 free_stack(pila);
+      |                 ^~~~~~~~~~
+      |                 create_stack
+exercises.c:164:1: error: expected expression before ‘==’ token
+  164 | ==
+      | ^~
+cc1: all warnings being treated as errors
+Compilation failed
+e4cd43d

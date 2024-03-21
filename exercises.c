@@ -161,6 +161,6 @@ int parentesisBalanceados(char *cadena) {
         int *dato = (int*)pop(pila);
         free(dato);
     }
-    freeStack(pila); 
+    free(pila); 
     return esBalanceado;
 }

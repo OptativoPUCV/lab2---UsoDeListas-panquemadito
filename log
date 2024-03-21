@@ -381,3 +381,13 @@ exercises.c:120:13: error: implicit declaration of function ‘stack_is_empty’
 cc1: all warnings being treated as errors
 Compilation failed
 a1afcf3
+Thu 21 Mar 2024 12:28:43 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:120:20: error: lvalue required as left operand of assignment
+  120 |     while (top(P1) /= 0) {
+      |                    ^~
+Compilation failed
+603efd1

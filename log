@@ -517,3 +517,16 @@ exercises.c:145:24: error: expected expression before ‘/’ token
 cc1: all warnings being treated as errors
 Compilation failed
 45429a5
+Thu 21 Mar 2024 12:41:58 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:140:19: error: implicit declaration of function ‘createStack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  140 |     Stack *pila = createStack();
+      |                   ^~~~~~~~~~~
+      |                   create_stack
+exercises.c:140:19: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation failed
+dc88c2a

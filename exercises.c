@@ -114,7 +114,16 @@ void copia_pila(Stack *P1, Stack *P2) {
 
   while (!is_empty(P1)) {
     push(aux, pop(P1));
+    
   }
+
+  while (!is_empty(aux)) {
+
+    void* elemento = pop(aux) ;
+    push(P1, elemento) ;
+    push(P2, elemento);
+  }
+  free_stacl(aux) ;
 }
 /*
 Ejercicio 5.

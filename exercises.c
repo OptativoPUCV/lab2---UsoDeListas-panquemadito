@@ -145,20 +145,19 @@ int corresponde(char a, char b) {
 int parentesisBalanceados(char *cadena) {
     Stack *pila = create_stack();
     char *actual = cadena;
-    while (*actual) {
 
+    while (*actual) {
         if (*actual == '(' || *actual == '[' || *actual == '{') {
             char *dato = (char*)malloc(sizeof(char));
             *dato = *actual;
             push(pila, dato);
         } else if (*actual == ')' || *actual == ']' || *actual == '}') {
-  
-            if (top(pila) !=0 || !corresponde(*(char*)top(pila), *actual)) {
-      
-                while (top(pila) !=0) {
+            if (is_empty(pila) || !corresponde(*(char*)top(pila), *actual)) {
+
+                while (!is_empty(pila)) {
                     free(pop(pila));
                 }
-                free(pila);
+                free_stack(pila);
                 return 0;
             } else {
                 free(pop(pila));
@@ -167,11 +166,10 @@ int parentesisBalanceados(char *cadena) {
         actual++;
     }
 
-    int esBalanceado = (top(pila) == 0);
-    while (top(pila) !=0) {
+    int esBalanceado = is_empty(pila); 
+    while (!is_empty(pila)) {
         free(pop(pila));
     }
-    free(pila);
+    free_stack(pila);
     return esBalanceado;
 }
-

@@ -55,7 +55,7 @@ List* crea_lista() {
         pushBack(L, nuevoElemento); 
     }
 
-    return L; // Retornamos el puntero a la lista
+    return L; 
 }
 
 /*
@@ -105,25 +105,32 @@ La función copia los punteros de la pila P1 en la pila P2.
 El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
+
+#include "stack.h"
+
 void copia_pila(Stack* P1, Stack* P2) {
+  
     Stack* aux = create_stack();
     if (aux == NULL) {
-      
-        return;
-    }
-  
-    while (!is_empty(P1)) {
-        push(aux, pop(P1));
+        fprintf(stderr, "Failed to create auxiliary stack\n");
+        exit(EXIT_FAILURE);
     }
 
-    while (!is_empty(aux)) {
+  
+    while (!stack_is_empty(P1)) {
+        void* elemento = pop(P1);
+        push(aux, elemento);
+    }
+
+    while (!stack_is_empty(aux)) {
         void* elemento = pop(aux);
         push(P1, elemento); 
-        push(P2, elemento); 
+        push(P2, elemento);
     }
-  
-    free_stack(aux); 
+
+    free_stack(aux);
 }
+
 /*
 Ejercicio 5.
 La función verifica si la cadena de entrada tiene sus 

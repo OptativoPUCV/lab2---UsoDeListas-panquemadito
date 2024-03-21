@@ -341,3 +341,18 @@ exercises.c:125:5: error: implicit declaration of function ‘free_stack’; did
 cc1: all warnings being treated as errors
 Compilation failed
 48f4c15
+Thu 21 Mar 2024 12:25:59 AM UTC: 
+ exercises.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:120:13: error: implicit declaration of function ‘stack_is_empty’ [-Werror=implicit-function-declaration]
+  120 |     while (!stack_is_empty(P1)) {
+      |             ^~~~~~~~~~~~~~
+exercises.c:131:5: error: implicit declaration of function ‘free_stack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  131 |     free_stack(aux);
+      |     ^~~~~~~~~~
+      |     create_stack
+cc1: all warnings being treated as errors
+Compilation failed
+bf13110

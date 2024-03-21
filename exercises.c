@@ -123,7 +123,7 @@ void copia_pila(Stack *P1, Stack *P2) {
     push(P1, elemento) ;
     push(P2, elemento);
   }
-  free_stacl(aux) ;
+  free_stack(aux) ;
 }
 /*
 Ejercicio 5.

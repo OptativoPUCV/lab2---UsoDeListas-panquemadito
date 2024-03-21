@@ -290,3 +290,24 @@ exercises.c:126:3: error: implicit declaration of function ‘free_stacl’; did
 cc1: all warnings being treated as errors
 Compilation failed
 574427a
+Thu 21 Mar 2024 12:15:14 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:112:23: error: expected ‘;’ before ‘}’ token
+  112 |     exit(EXIT_FAILURE)
+      |                       ^
+      |                       ;
+  113 |   }
+      |   ~                    
+exercises.c:115:11: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  115 |   while (!is_empty(P1)) {
+      |           ^~~~~~~~
+exercises.c:126:3: error: implicit declaration of function ‘free_stack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  126 |   free_stack(aux) ;
+      |   ^~~~~~~~~~
+      |   create_stack
+cc1: all warnings being treated as errors
+Compilation failed
+e8398b7

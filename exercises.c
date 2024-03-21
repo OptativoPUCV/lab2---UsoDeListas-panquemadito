@@ -146,7 +146,7 @@ int parentesisBalanceados(char *cadena) {
             push(pila, dato);
         } else if (*actual == ')') {
             if (isEmpty(pila)) { 
-                freeStack(pila); 
+                free(pila); 
                 return 0;
             } else {
                 int *dato = (int*)pop(pila);
@@ -157,7 +157,7 @@ int parentesisBalanceados(char *cadena) {
     }
 
     int esBalanceado = isEmpty(pila);
-    while (!isEmpty(pila)) {
+    while (top(pila) != 0) {
         int *dato = (int*)pop(pila);
         free(dato);
     }
